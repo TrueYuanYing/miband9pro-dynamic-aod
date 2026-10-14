@@ -48,7 +48,7 @@ class PackerTests(unittest.TestCase):
         self.assertEqual(len([k for k,r in again.sections[0x130] if k==0x05020000]),1)
 
     def test_non_ascii_face_id_is_rejected(self):
-        with self.assertRaises(ValueError):Watchface(scaffold()).pack('������������������','Base')
+        with self.assertRaises(ValueError):Watchface(scaffold()).pack('１２３４５６７８９','Base')
 
     def test_truncated_or_off_screen_host_is_rejected(self):
         for layer in (struct.pack('<I',0x050000dc),struct.pack('<IHHII',0x050000dc,336,0,0,0)):
