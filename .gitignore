@@ -18,3 +18,10 @@ frames/
 *.zip
 .env
 .env.*
+!assets/hero.png
+!assets/storyboard.png
+!assets/architecture.png
+!assets/crop-optimization.png
+!assets/milestones.png
+!assets/bright-demo.gif
+!assets/aod-demo.gif
