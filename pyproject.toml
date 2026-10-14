@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "miband9pro-dynamic-aod"
+version = "0.1.0"
+description = "Experimental automatic dynamic AOD for Xiaomi Smart Band 9 Pro CN 3.1.175"
+requires-python = ">=3.10"
+dependencies = ["Pillow>=10"]
+license = "MIT"
+authors = [{name = "TrueYuanYing"}]
+
+[project.optional-dependencies]
+test = ["lupa>=2", "unicorn>=2"]
+native = ["pyelftools>=0.31"]
+
+[project.scripts]
+band9pro-aod = "band9pro_aod.cli:main"
+
+[tool.setuptools.package-data]
+band9pro_aod = ["runtime/*.lua"]
+
+[tool.setuptools.packages.find]
+include = ["band9pro_aod*"]
